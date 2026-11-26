@@ -31,7 +31,7 @@
     footer{margin-top:36px;color:var(--muted);font-size:.86rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     footer a{color:var(--accent)}
   </style>
-<link rel="stylesheet" href="/assets/studio-mark.css"></head>
+<link rel="stylesheet" href="/assets/studio-mark.css"><link rel="stylesheet" href="/assets/portfolio/embed.css"><script defer src="/assets/portfolio/exhibit.js"></script></head>
 <body>
   <div class="wrap">
     <header>
@@ -128,10 +128,31 @@ agentfence verify-ledger .agentfence/audit.jsonl</code></pre>
     runCheck();
   </script>
 
-<aside class="studio-project-entry" style="--entry-color:#f4a2af">
-  <img src="/assets/thumbs/showcase-agentfence.webp" alt="" width="160" height="100" loading="lazy" decoding="async">
-  <div><strong>Decide what a tool may read</strong><small>Apply the workspace boundary</small></div>
-  <a href="/playground/?project=agentfence&amp;lang=en">Try the case ↗</a>
-</aside>
+<div class="atlas-embedded" data-motif="route" style="--exhibit-hue:9"><section class="exhibit-studio" id="portfolio-example" data-project="agentfence" data-motif="route" data-state="0" aria-labelledby="portfolio-example-title">
+    <div class="exhibit-studio-head"><div><p class="exhibit-kicker"><span class="pf-en" lang="en">Illustrative sample</span><span class="pf-fa" lang="fa">دادهٔ نمونه</span></p><h2 id="portfolio-example-title"><span class="pf-en" lang="en">Send the sample through a route</span><span class="pf-fa" lang="fa">نمونه را از یک مسیر عبور بده</span></h2></div>
+       <a href="/projects/guide/agentfence/"><span class="pf-en" lang="en">Interactive introduction</span><span class="pf-fa" lang="fa">معرفی تعاملی</span> <i class="exhibit-arrow" aria-hidden="true"></i></a></div>
+    <div class="exhibit-lab">
+      <div class="stage-picture" aria-hidden="true">
+        <div class="stage-sign"><i></i><i></i><i></i><strong dir="ltr">agentfence</strong></div>
+
+        <div class="stage-track" dir="ltr"></div>
+        <div class="stage-evidence" dir="ltr"><span dir="auto">Tool read</span><span dir="auto">Policy check</span><span dir="auto">Fixture scope</span></div>
+      </div>
+      <div class="stage-work">
+        <p><span class="pf-en" lang="en">A test assistant can read fixtures. It asks for a folder outside that authorized workspace.</span><span class="pf-fa" lang="fa">دستیار آزمایشی مجاز به خواندن نمونه‌هاست و درخواست خواندن پوشه‌ای خارج از فضای مجاز را می‌دهد.</span></p>
+        <div class="stage-actions" role="group" aria-label="Example controls / کنترل‌های نمونه">
+          <button type="button" data-stage="1" aria-pressed="false"><span class="pf-en" lang="en">Apply the workspace boundary</span><span class="pf-fa" lang="fa">محدودهٔ فضای کاری را اعمال کن</span><i class="exhibit-arrow" aria-hidden="true"></i></button><button type="button" data-stage="2" aria-pressed="false"><span class="pf-en" lang="en">Grant access to every folder</span><span class="pf-fa" lang="fa">به همهٔ پوشه‌ها دسترسی بده</span><i class="exhibit-arrow" aria-hidden="true"></i></button>
+        </div>
+        <output class="stage-result" aria-live="polite"><span class="pf-en" lang="en">Try a response to see its effect.</span><span class="pf-fa" lang="fa">یک کار را انتخاب کن و اثرش را ببین.</span></output>
+        <div class="stage-foot">
+          <button type="button" data-stage="0" aria-pressed="true"><span class="pf-en" lang="en">Reset example</span><span class="pf-fa" lang="fa">بازنشانی نمونه</span></button>
+
+        </div>
+      </div>
+    </div>
+   </section>
+    <p class="exhibit-takeaway"><span class="pf-en" lang="en">Check the decision and its reason together. The sample scope allows fixtures in the workspace and excludes paths outside it.</span><span class="pf-fa" lang="fa">تصمیم و دلیلش را کنار هم بررسی کن. محدودهٔ نمونه فایل‌های آزمون داخل فضای کار را مجاز می‌داند.</span></p>
+    <script type="application/json" data-embed-project>{"entries":[{"id":"agentfence","group":"agents","motif":"route","color":"#f4a2af","title":["Decide what a tool may read","تعیین کن ابزار به چه داده‌ای دسترسی داشته باشد"],"brief":["A test assistant can read fixtures. It asks for a folder outside that authorized workspace.","دستیار آزمایشی مجاز به خواندن نمونه‌هاست و درخواست خواندن پوشه‌ای خارج از فضای مجاز را می‌دهد."],"actions":[["Apply the workspace boundary","محدودهٔ فضای کاری را اعمال کن"],["Grant access to every folder","به همهٔ پوشه‌ها دسترسی بده"]],"outcomes":[["The simulated policy gate blocks the out-of-scope read and records its reason.","سیاست نمونه درخواست خارج از محدوده را مسدود و دلیلش را ثبت می‌کند."],["The simulation shows how the broader grant exposes files the task never required.","شبیه‌سازی نشان می‌دهد دسترسی گسترده فایل‌های غیرضروری برای این کار را در معرض دسترسی قرار می‌دهد."]],"evidence":[["Tool read","Policy check","Fixture scope"],["Tool read","Outside scope","Denied"],["Tool read","Broad access","Excess scope"]],"name":"agentfence","kicker":["Capability firewall for agents","فایروال دسترسی ایجنت‌ها"],"intro":["Dry-run capability firewall, filesystem blast-radius simulator, and tamper-evident SHA-256 hash-chained audit ledger for AI coding agents.","فایروال دسترسی و شبیه‌ساز شعاع انفجار فایل برای ایجنت‌های کدنویسی همراه با دفتر کل ممیزی مقاوم در برابر دستکاری (زنجیره SHA-256)."],"hint":["Run `agentfence init && agentfence sim \"rm -rf .git\" --ledger audit.jsonl` to inspect risk scoring, blocked scope, and ledger verification offline.","با `agentfence init && agentfence sim \"rm -rf .git\" --ledger audit.jsonl` امتیاز ریسک، فایل‌های در خطر و دفتر کل ممیزی را آفلاین بررسی کنید."],"site":"/showcase/agentfence/","source":"https://github.com/mrzroot/agentfence","layout":"switchboard","hue":9,"image":"/assets/thumbs/showcase-agentfence.webp"}],"labels":{"map":["Project Atlas","اطلس پروژه‌ها"],"mapIntro":["Four ways to explore the projects. Choose a project to see what it does and open its interactive introduction.","چهار مسیر برای گشتن میان پروژه‌ها. یکی را انتخاب کن تا ببینی چه کار می‌کند و معرفی تعاملی‌اش را باز کنی."],"agents":["AI tooling","ابزارهای هوش مصنوعی"],"language":["Language and data","زبان و داده"],"systems":["Systems","سامانه‌ها"],"showcase":["Design and demos","طراحی و دمو"],"projects":["All projects","همهٔ پروژه‌ها"],"open":["Interactive introduction","معرفی تعاملی"],"test":["Try the example","نمونه را امتحان کن"],"story":["The situation","مسئله"],"reference":["Inspect the project","بررسی پروژه"],"source":["View source on GitHub","کد منبع در گیت‌هاب"],"demo":["Open project website","باز کردن سایت پروژه"],"guide":["Suggested first step","قدم اول پیشنهادی"],"sample":["Illustrative sample","دادهٔ نمونه"],"result":["What happens","نتیجه"],"choose":["Try a response to see its effect.","یک کار را انتخاب کن و اثرش را ببین."],"still":["Initial state","حالت اولیه"],"reset":["Reset example","بازنشانی نمونه"],"more":["Explore another project","یک پروژهٔ دیگر ببین"]}}</script>
+  </div>
 </body>
 </html>
